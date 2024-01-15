@@ -35,5 +35,9 @@ module.exports = {
 
   fingerprintSync(query) {
     return PgQuery.fingerprintSync(query);
+  },
+
+  scanQuerySync(query) {
+    return JSON.parse(PgQuery.scanQuerySync(query));
   }
 };

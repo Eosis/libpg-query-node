@@ -10,7 +10,7 @@
       ],
       "actions": [
         {
-          "outputs": ['libpg_query/include/pg_query.h'],
+          "outputs": ['libpg_query/include/pg_query.h', 'libpg_query/include/protobuf/*'],
           "inputs": [],
           "action": ['script/buildAddon.sh'],
           "action_name": 'prebuild_dependencies'

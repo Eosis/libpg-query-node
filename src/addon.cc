@@ -34,6 +34,11 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
       Napi::Function::New(env, FingerprintAsync)
   );
 
+    exports.Set(
+      Napi::String::New(env, "scanQuerySync"),
+      Napi::Function::New(env, ScanQuerySync) 
+  );
+
   return exports;
 }
 

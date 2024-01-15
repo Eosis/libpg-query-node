@@ -42,9 +42,10 @@ if [ ! $file ]; then
 	exit 1;
 fi
 
-#copy queryparser.cc, binding.gyp to current directory
-#
-#
+if [ ! ls protobuf ]; then
+	echo "ERROR: protobuf headers not found";
+	exit 1;
+fi
 
 if [ "$(uname)" == "Darwin" ]; then
     cp $(pwd)/libpg_query.a $rDIR/libpg_query/osx/
@@ -53,6 +54,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 cp $(pwd)/pg_query.h $rDIR/libpg_query/include/
+cp -r $(pwd)/protobuf $rDIR/libpg_query/include/
 
 cd "$rDIR"
-rm -rf "$tmpDir"
